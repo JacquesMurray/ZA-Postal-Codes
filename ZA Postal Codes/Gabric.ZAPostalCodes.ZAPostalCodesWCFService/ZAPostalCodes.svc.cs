@@ -12,12 +12,26 @@ namespace Gabric.ZAPostalCodes.ZAPostalCodesWCFService
     {
         public List<Area> GetAreas()
         {
-            throw new NotImplementedException();
+            List<Area> returnAreas;
+            
+            using (ZAPostalCodesModel dataModel = new ZAPostalCodesModel())
+            {
+                returnAreas = dataModel.Areas.ToList<Area>();
+            }
+
+            return returnAreas;
         }
 
         public List<Suburb> GetSuburbs()
         {
-            throw new NotImplementedException();
+            List<Suburb> returnSuburbs;
+
+            using (ZAPostalCodesModel dataModel = new ZAPostalCodesModel())
+            {
+                returnSuburbs = dataModel.Suburbs.ToList<Suburb>();
+            }
+
+            return returnSuburbs;
         }
 
         public List<Area> SearchAreas(string searchArea)
