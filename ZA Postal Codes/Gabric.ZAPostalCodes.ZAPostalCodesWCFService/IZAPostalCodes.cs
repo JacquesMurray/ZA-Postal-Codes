@@ -11,6 +11,20 @@ namespace Gabric.ZAPostalCodes.ZAPostalCodesWCFService
     [ServiceContract]
     public interface IZAPostalCodes
     {
+        [OperationContract]
+        List<Area> GetAreas();
+
+        [OperationContract]
+        List<Suburb> GetSuburbs();
+
+        [OperationContract]
+        List<Area> SearchAreas(string searchArea);
+
+        [OperationContract]
+        List<Suburb> SearchSuburbs(string searchSuburb);
+
+        [OperationContract]
+        List<Suburb> SearchPostalCode(string searchPostalCode);
     }
 
     [DataContract]
